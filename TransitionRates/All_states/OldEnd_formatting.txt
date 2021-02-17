@@ -1,0 +1,111 @@
+</div>
+
+
+    </body>
+    <script>
+        $(document).ready(function(){
+
+            /* export Excel button */
+          $(".excel").click(function(){
+            /* var table = $("#secondTable");  */
+            if ($('#secondTable').length)
+            {
+              var table = $("#secondTable");
+            }
+            else
+            {
+              var table = $("#htmltable");
+            }
+            if(table && table.length){
+            $(table).table2excel({
+            exclude: ".noExl",
+            name: document.getElementById("demo").innerText,
+            filename:  document.getElementById("transitionType").innerText+ document.getElementById("demo").innerText+ new Date().toISOString().replace(/[\-\:\.]/g, "") + ".xls",
+            fileext: ".xls",
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true,
+            preserveColors: false
+            });
+            }
+            });
+        /* create a table to save data */
+          function makeTable(container, data) {
+            var table = $("<table/>").addClass('CSSTableGenerator');
+            $.each(data, function(rowIndex, r) {
+                var row = $("<tr/>");
+                $.each(r, function(colIndex, c) {
+                    row.append($("<t"+(rowIndex == 0 ?  "h" : "d")+"/>").text(c));
+                });
+                table.append(row);
+            });
+            return container.append(table);
+        }
+        /* append data to table */
+          function appendRow(table, rowData) {
+            var lastRow = $('<tr/>').appendTo(table.find('table:last'));
+            $.each(rowData, function(colIndex, c) {
+                lastRow.append($('<td/>').text(c));
+            });
+            return lastRow;
+          }
+        /* delete previous rows */
+           function deleteRows() {
+           $("#secondTable").empty();
+
+          }
+
+
+            $(".button").click(function(){
+                document.getElementById("demo").innerHTML = this.value;
+                document. getElementById("htmltable").style.display="block";
+                search_table($(this).val());
+            });
+
+
+
+            function search_table(value){
+
+                      $("#secondTable").remove();
+                      /* location.reload(true); */
+                      var data = [["From State", "To State", "wavelength nm", "Matrix Element a.u."]];
+                      var Newtable = makeTable($(document.body),data);
+                      $(".CSSTableGenerator").attr('id','secondTable');
+                      $("#secondTable").hide();
+                 $('#Na_table tr').each(function(){
+                      var found = 'false';
+                          $(this).each(function(){
+                          /* when the keyword is found in the first column */
+                           if($(this).find('td').eq(0).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                           {
+                              found = 'true';
+                           }
+                            /*if the keyword is found in the second column then toggle column1 and column2 contents  */
+                           if($(this).find('td').eq(1).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                           /* .html() brings the whole format of the cell */
+                           {  var secondColumn = $(this).find('td').eq(1).html();
+                              var firstColumn = $(this).find('td').eq(0).html();
+                            /* contents toggled here */
+                              $(this).find('td').eq(0).html(secondColumn);
+                              $(this).find('td').eq(1).html(firstColumn);
+                              found = 'true';
+                           }
+                      });
+                       /*if the row contains this search keyword and it is in the first column then show it as it is. If it is in the second column then switch the two fileds together */
+
+                       if(found == 'true')
+                      {
+                          $(this).show();
+                          appendRow(Newtable, [$(this).find('td').eq(0).text(),$(this).find('td').eq(1).text(),$(this).find('td').eq(2).text(),$(this).find('td').eq(3).text()]);
+
+                      }
+                      else
+                      {
+                        $(this).hide();
+                      }
+                 });
+            }
+
+
+        });
+        </script>

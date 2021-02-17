@@ -1,0 +1,115 @@
+<table class="table center" id="htmltable3"  data-name="listtable" cellpadding=0 cellspacing=0 width=0 style=' border: .5pt solid #4472C4; border-collapse:
+collapse;table-layout:fixed;width:0pt'>
+<thead>
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Initial<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Final<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Matrix element (a.u.)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Matrix el. error (a.u.)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Matrix element (a.u.)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Wavelength (nm)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Wavelength error (nm)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Wavelength (nm)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Transition rate (s<sup>-1</sup>)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Transition rate error (s<sup>-1</sup>)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Transition rate (s<sup>-1</sup>)<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Branching ratio<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Branching ratio error<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Branching rat.<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Reference<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;DOI<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;Reference 2<br>&nbsp;</th>
+
+  <th class=xl6320382 width=200  style='height:14.75pt;width:77pt;
+  font-size:13.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri, sans-serif;border-top:.5pt solid #2F75B5;
+  border-right:.5pt solid #4472C4;border-bottom:.5pt solid #4472C4;border-left:.5pt solid #2F75B5;
+  background:#4472C4;mso-pattern:#4472C4 none; display: none;'>&nbsp;&nbsp;DOI 2<br>&nbsp;</th>
+
+</thead>
+
+<!--excel_copy-->
+<tbody id="cs_table3">

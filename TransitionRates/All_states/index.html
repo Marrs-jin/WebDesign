@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+  /* for print button */
+  .button {
+    background-color: rgba(0, 200, 255, 1);
+    border: none;
+    color: black;
+    padding: 3px 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight:700;
+    font-style:normal;
+    text-decoration:none;
+    font-family:Calibri, sans-serif;
+    margin: 1px 1px;
+    cursor: pointer;
+    width:65;
+    height:25px;
+    border-radius: 10px;
+    box-shadow: 0 2px #999;
+  }
+
+  .button:hover {background-color:rgba(30, 144, 255, 1); }
+  .button:active {
+  background-color: rgba(16, 78, 139, 1);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
+  .button-clicked {
+  background-color: rgb(50, 92, 79)
+  }
+  .button:focus {
+  background-color:  rgba(30, 144, 255, 1);
+  /* color: whitesmoke; */
+  text-shadow: whitesmoke;
+  /* border-style: double; */
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+  color: black;
+  }
+    .btn{
+      border: none;
+      width: 80px;
+      height: 40px;
+      color: white;
+      font-weight: bold;
+    }
+    .btn2 {
+      background-color: rgba(0, 191, 255, 1);
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 15px;
+      border-radius: 5px;
+
+    }
+    .btn2:hover {
+      background-color: DodgerBlue;
+    }
+
+    .btn-primary {
+      background-color:  rgba(0, 200, 255, 1);
+      font-size: 18px;
+      /* width: 45px; */
+    }
+    .btn:focus {
+    background-color:  rgba(30, 144, 255, 1);
+    box-shadow: 2px 2px rgba(27, 27, 27, 0.80);
+    transform: translateY(3px);
+    }
+
+    /* to center the website- will center the website on screens that are wider than 500px. On screens that are less than 500px wide, it will span the whole of the page*/
+    .content {
+      max-width: 615px;
+      margin: auto;
+    }
+    .nav-tabs{
+      background-color: #f2f2f2;
+    }
+    .btn1 {
+  background-color: rgba(0, 191, 255, 1);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+
+}
+
+/* Darker background on mouse-over */
+.btn1:hover {
+  background-color: DodgerBlue;
+}
+  </style>
+  <style>
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+          }
+  </style>
+  <script>
+    // function readfile() {
+    //   alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
+    // }
+
+  //initiates print once content has been loaded into iframe
+  function print() {
+    //  document.getElementById('iframe').contentWindow.print();
+    var objFra = document.getElementById('iframe');
+    objFra.contentWindow.focus();
+    objFra.contentWindow.print();
+  }
+
+  function showTransitions(id) {
+      // to show the selected Element name on top of the page
+      var element = document.querySelector("#element");
+      element.innerHTML = id.innerHTML; // + " <I>[Uncertainties are given in parenthesis]</I>";
+      // document.getElementById("iframe").src = "Li.txt"
+
+      switch (id.innerHTML) {
+        case "Li":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "Li.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "LiTranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Na":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "Na.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "NaTranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "K ":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "K.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "KTranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Rb":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "Rb.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "RbTranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Cs":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "Cs.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "CsTranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Fr":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "Fr.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "FrTranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Be<sup>+</sup>":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "BeII.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "BeIITranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Mg<sup>+</sup>":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "MgII.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "MgIITranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Ca<sup>+</sup>":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "CaII.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "CaIITranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Sr<sup>+</sup>":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "SrII.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "SrIITranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Ba<sup>+</sup>":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "BaII.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "BaIITranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+
+        case "Ra<sup>+</sup>":
+        if ( document.getElementById("nav-home-tab").classList.contains('active')){
+          // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+          location.href = "RaII.html";
+          }
+        else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+          location.href = "Polarizability.html";
+          }
+        else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+          location.href = "RaIITranAuto.html";
+          }
+        else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+          location.href = "OtherValues.html";
+          }
+          break;
+      }
+    }
+
+     </script>
+  <title>Transition Matrix Elements</title>
+
+</head>
+
+<body>
+  <!-- <p id="demo">demo</p> -->
+  <nav class="navbar navbar-dark bg-primary navbar-expand-lg ">
+    <!-- Navbar content -->
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link active" href="index.html" style = "font-weight: bold">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </li> -->
+      <!-- Dropdown -->
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style = 'color: white'>Matrix Elements</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Li.html">Li</a>
+          <a class="dropdown-item" href="Na.html" >Na</a>
+          <a class="dropdown-item" href="K.html" >K</a>
+          <a class="dropdown-item" href="Rb.html" >Rb</a>
+          <a class="dropdown-item" href="Cs.html" >Cs</a>
+          <a class="dropdown-item" href="Fr.html" >Fr</a>
+          <a class="dropdown-item" href="BeII.html" >Be+</a>
+          <a class="dropdown-item" href="MgII.html" >Mg+</a>
+          <a class="dropdown-item" href="CaII.html" >Ca+</a>
+          <a class="dropdown-item" href="SrII.html" >Sr+</a>
+          <a class="dropdown-item" href="BaII.html" >Ba+</a>
+          <a class="dropdown-item" href="RaII.html" >Ra+</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style = "color: white">Transition Rates</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="LiTranAuto.html">Li</a>
+          <a class="dropdown-item" href="NaTranAuto.html" >Na</a>
+          <a class="dropdown-item" href="KTranAuto.html" >K</a>
+          <a class="dropdown-item" href="RbTranAuto.html" >Rb</a>
+          <a class="dropdown-item" href="CsTranAuto.html" >Cs</a>
+          <a class="dropdown-item" href="FrTranAuto.html" >Fr</a>
+          <a class="dropdown-item" href="BeIITranAuto.html" >Be+</a>
+          <a class="dropdown-item" href="MgIITranAuto.html" >Mg+</a>
+          <a class="dropdown-item" href="CaIITranAuto.html" >Ca+</a>
+          <a class="dropdown-item" href="SrIITranAuto.html" >Sr+</a>
+          <a class="dropdown-item" href="BaIITranAuto.html" >Ba+</a>
+          <a class="dropdown-item" href="RaIITranAuto.html" >Ra+</a>
+        </div>
+      </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown ">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style = 'color: white'>Polarizabilities</a>
+      <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="">Li</a>
+        <a class="dropdown-item" href="">Na</a>
+        <a class="dropdown-item" href="" >K</a>
+        <a class="dropdown-item" href="" >Rb</a>
+        <a class="dropdown-item" href="Polarizability.html">Cs</a>
+        <a class="dropdown-item" href="">Fr</a>
+        <a class="dropdown-item" href="" >Be+</a>
+        <a class="dropdown-item" href="" >Mg+</a>
+        <a class="dropdown-item" href="" >Ca+</a>
+        <a class="dropdown-item" href="">Sr+</a>
+        <a class="dropdown-item" href="" >Ba+</a>
+        <a class="dropdown-item" href="" >Ra+</a>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown ">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style = 'color: white'>Other Data</a>
+      <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="">Li</a>
+        <a class="dropdown-item" href="">Na</a>
+        <a class="dropdown-item" href="" >K</a>
+        <a class="dropdown-item" href="" >Rb</a>
+        <a class="dropdown-item" href="OtherValues.html">Cs</a>
+        <a class="dropdown-item" href="">Fr</a>
+        <a class="dropdown-item" href="" >Be+</a>
+        <a class="dropdown-item" href="" >Mg+</a>
+        <a class="dropdown-item" href="">Ca+</a>
+        <a class="dropdown-item" href="">Sr+</a>
+        <a class="dropdown-item" href="" >Ba+</a>
+        <a class="dropdown-item" href="" >Ra+</a>
+      </div>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown ">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style = 'color: white'>Contact Us</a>
+      <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="contact.html">Contact Us</a>
+        <a class="dropdown-item" href="inquiries.html">General Suggestions</a>
+        <a class="dropdown-item" href="upcomingChanges.html" >Upcoming Changes and Features</a>
+        <a class="dropdown-item" href="feedback.html" >Feedback</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="about.html" style = 'color: white'>About Us</a>
+    </li>
+    </ul>
+    <button class="btn2 btn-outline-success my-2 my-sm-0"  onclick="location.href = 'feedback.html';">Feedback</button>
+    </div>
+    </nav>
+
+  <!-- <div class="container"> -->
+  <div class="jumbotron">
+    <h1 >Online Portal for High-Precision Atomic Physics Data and Computation</h1>
+    <!-- <p class="lead">This component is for calling extra attention to featured content or information.</p> -->
+    <hr class="my-4">
+    <p>This portal provides a wide range of transition matrix elements, static, and dynamic polarizabilities for a number of atoms and ions, including Li, Be+, Na, Mg+, K, Ca+, Rb, Sr+, Sr, Ba+, Fr, Ra+, and others. The data are calculated using a high-precision state-of-the-art coupled-cluster (CC) method or a hybrid method that combines configuration interaction and CC. All values include estimated uncertainties. Experimental values are also included with references where high-precision data are available. We seek community input to improve the portal and guide the next stages of the project which will include more complicated systems and capabilities to compute atomic properties on demand via portal.</p>
+    <a class="btn1 btn-primary btn-lg" href="about.html" role="button">Learn more</a>
+  </div>
+  <!-- </div> -->
+ <div class="container">
+  <!-- 213, 220, 223 -->
+  <!-- <img src="images/website under construction.jpg" alt="Website Under construction" width="1100" height="800">
+   <p></p>  -->
+  <div align=center class="content" width: "1000" style="background-color:rgb(255, 255, 255);text-align:center;  ">
+
+
+    <nav>
+      <div class="nav nav-tabs   " id="nav-tab" role="tablist">
+        <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><font size="4"><b>Matrix Elements</b></font></a>
+        <a class=" nav-link " id="nav-profile-tabTR" data-toggle="tab" href="#nav-profile2" role="tab" aria-controls="nav-profile2" aria-selected="false"><font size="4"><b>Transition Rates</b></font></a>
+        <a class=" nav-link " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><font size="4"><b>Polarizability</b></font></a>
+        <a class=" nav-link " id="nav-profile-tabOV" data-toggle="tab" href="#nav-profile3" role="tab" aria-controls="nav-profile3" aria-selected="false"><font size="4"><b>Other Data</b></font></a>
+        <!--nav-pills <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a> -->
+      </div>
+    </nav>
+
+
+
+    <P></P>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane  show  active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" style = 'font-size: 20px'> Click on an element to display its electric dipole matrix elements</div>
+      <div class="tab-pane  " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style = 'font-size: 20px'> Click on an element to display its polarization info</div>
+      <div class="tab-pane  " id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab" style = 'font-size: 20px'> Click on an element to display its transition rates, lifetimes, and branching ratios</div>
+      <div class="tab-pane  " id="nav-profile3" role="tabpanel" aria-labelledby="nav-profile-tab" style = 'font-size: 20px'> Click on an element to display other calculated values</div>
+      <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">ZZZZZZZZZZZZZZZZZZZ</div> -->
+    </div>
+    <br>
+
+
+    <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+    </div> -->
+
+
+    <h6 id="element" style="text-align: Center;margin: 20px;"> <I> </I></h6>
+    <table align=center style="width: 10%; ">
+      <tbody>
+        <tr>
+          <td ><button id="Li" class=" btn btn-primary buttonAdjustSizeRed" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Li'">Li</button></td>
+          <td ><button id="LiP" class="btn btn-primary buttonorange" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Be<sup>+</sup>'">Be<sup>+</sup></button></td>
+        </tr>
+        <tr>
+          <td ><button id="Na" class=" btn btn-primary buttonred" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Na'">Na</button></td>
+          <td ><button id="NaP" class="btn btn-primary buttonorangesmall" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Mg<sup>+</sup>'">Mg<sup>+</sup></button></td>
+        </tr>
+        <tr>
+          <td ><button id="K" class="btn btn-primary buttonAdjustSizeRed" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='K '">K </button></td>
+          <td ><button id="KP" class="btn btn-primary buttonorange" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Ca<sup>+</sup>'">Ca<sup>+</sup> </button></td>
+        </tr>
+        <tr>
+          <td ><button id="Rb" class="btn btn-primary buttonred" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Rb'">Rb</button></td>
+          <td ><button id="RbP" class="btn btn-primary buttonAdjustSizeOrange" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Sr<sup>+</sup>'">Sr<sup>+</sup></button></td>
+        </tr>
+        <tr>
+          <td ><button id="Cs" class="btn btn-primary buttonred" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Cs'">Cs</button></td>
+          <td ><button id="CsP" class="btn btn-primary buttonorange" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Ba<sup>+</sup>'">Ba<sup>+</sup></button></td>
+        </tr>
+        <tr>
+          <td ><button id="Fr" class="btn btn-primary buttonAdjustSizeRed" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Fr'">Fr</button></td>
+          <td ><button id="FrP" class="btn btn-primary buttonorange" type="button"
+              onclick="showTransitions(this)" onmouseout="this.innerHTML='Ra<sup>+</sup>'">Ra<sup>+</sup></button></td>
+        </tr>
+        <tr>
+          <td ></td>
+          <td ></td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+
+
+
+
+
+  </div>
+  <!-- <center> <h6>Would you please provide some <a href="feedback.html">feedback</a> to improve our website? </h6></center> -->
+  <!-- follow the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDOyZXVkZlDHsVNT848CfykTBApeURvC0h4vHE8odQiRtAAw/viewform?usp=sf_link"> link </a> -->
+  <!-- <div align=center class="content"> -->
+    <!-- <h3 style="text-align: left;margin: 20px;">Transitions</h3> -->
+    <!-- <iframe align=center id='iframe' height="500" width="500" src='' onload='readfile()' scrolling="yes" -->
+      <!-- style="border:none;"> </iframe> -->
+    <p></p>
+    <!-- <button id="print" class="button" type="button" onclick="print()" value="Print" >print</button> -->
+  <!-- </div> -->
+
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+<!-- https://www.encodedna.com/javascript/practice-ground/default.htm -->
+<!-- http://jsfiddle.net/whe0agmx/1/ -->
+<!-- https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_type --https://udwinprod-my.sharepoint.com/personal/parinazb_udel_edu  -> share ->embed code> -->

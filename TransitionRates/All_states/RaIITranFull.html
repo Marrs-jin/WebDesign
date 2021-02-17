@@ -1,0 +1,3842 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+
+<!--Export Data-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569818907/jquery.table2excel.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--Export Data-->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.0.0/dist/instantsearch.production.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+<!--bootstap-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="MDB\js\popper.min.js"></script>
+<!-- datatables -->
+<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569818907/jquery.table2excel.min.js"></script>
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+
+<!-- these control the dropdown menus (and maybe other stuff) interactability -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+<style type="text/css">
+
+    @media print
+    {
+    .noprint {display:none;}
+    }
+    @media screen
+    {
+    /* ... */
+    }
+</style>
+
+<style>
+.btn {
+ background-color:rgb(222, 228, 222);
+ border: 1pt solid grey;
+ color: black;
+ font-weight: bold;
+ padding: 12px 20px;
+ cursor: pointer;
+ font-size: 14px;
+ height: 70px;
+
+}
+
+.btn:hover {
+ background-color: DodgerBlue;
+}
+/* Style the header */
+header {
+ background-color: #666;
+ padding: 10px;
+ text-align: center;
+ font-size: 35px;
+ font-weight: bold;
+ color: white;
+}
+</style>
+
+<style>
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 0px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  /*height: 10; */
+}
+</style>
+
+<style>
+
+.container {
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vw;
+  }
+
+.btn2 {
+  background-color: rgba(0, 191, 255, 1);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+/* Darker background on mouse-over */
+.btn2:hover {
+  background-color: DodgerBlue;
+}
+</style>
+
+<script type="text/javascript" class="init">
+/* Custom filtering function which will search data in column four between two values */
+$.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+        var min = parseInt( $('#min').val(), 10 );
+        var max = parseInt( $('#max').val(), 10 );
+        var wavelength = parseFloat( data[3] ) || 0; // use data for the Wavelength column
+
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+             ( isNaN( min ) && wavelength <= max ) ||
+             ( min <= wavelength   && isNaN( max ) ) ||
+             ( min <= wavelength   && wavelength <= max ) )
+        {
+            return true;
+        }
+        return false;
+    }
+);
+
+$(document).ready(function() {
+  var table = $('#htmltable').DataTable({
+    "paging":false,
+"aaSorting": [],
+  columnDefs: [
+  {
+  orderable: false,
+  targets: 0
+  },
+  {
+  orderable: false,
+  targets: 1
+  }
+],
+
+"bInfo": false, // hide showing entries
+});
+
+// Event listener to the two range filtering inputs to redraw on input
+$('#min, #max').keyup( function() {
+    table.draw();
+} );
+
+} );
+</script>
+</head>
+
+<script>
+function goBack() {
+  window.location.href = "CsTransAuto.html";
+}
+
+function printPage() {
+window.print();
+}
+</script>
+
+<script>
+function load() {
+document. getElementById("htmltable").style.display="";
+
+}
+</script>
+
+<script type="text/javascript">
+function getFocus() {
+  var state = document.querySelector("#demo").innerHTML;
+  console.log(state);
+  document.getElementById(state).focus();
+
+  var listener = window.addEventListener('blur', function() {
+    if (document.activeElement === document.getElementById('iframe')) {
+    // clicked
+      console.log("clicked");
+      getFocus();
+    }
+    window.removeEventListener('blur', listener);
+    });
+}
+</script>
+
+
+<script>
+  // function readfile() {
+  //   alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
+  // }
+
+//initiates print once content has been loaded into iframe
+function print() {
+  //  document.getElementById('iframe').contentWindow.print();
+  var objFra = document.getElementById('iframe');
+  objFra.contentWindow.focus();
+  objFra.contentWindow.print();
+}
+
+function showTransitions(id) {
+    // to show the selected Element name on top of the page
+    var element = document.querySelector("#element");
+    element.innerHTML = id.innerHTML; // + " <I>[Uncertainties are given in parenthesis]</I>";
+    // document.getElementById("iframe").src = "Li.txt"
+    switch (id.innerHTML) {
+      case "Li":
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "Na":
+      if ( document.getElementById("nav-home-tab").classList.contains('active')){
+
+        location.href = "NaTransitions.html";
+        }
+      else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+        location.href = "";
+        }
+        break;
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "K ":
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "Rb":
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "Cs":
+      if ( document.getElementById("nav-home-tab").classList.contains('active')){
+        // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+        location.href = "CsTransitions2.html";
+        }
+      else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+        location.href = "Polarizability.html";
+        }
+      else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+        location.href = "CsTranAuto.html";
+        }
+      else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+        location.href = "OtherValues.html";
+        }
+        break;
+
+      case "Fr":
+      if ( document.getElementById("nav-home-tab").classList.contains('active')){
+        // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+        location.href = "FrTransitions2.html";
+        }
+      else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+        location.href = "Polarizability.html";
+        }
+      else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+        location.href = "FrTranAuto.html";
+        }
+      else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+        location.href = "OtherValues.html";
+        }
+        break;
+
+      case "Be+":
+      if ( document.getElementById("nav-home-tab").classList.contains('active')){
+        // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+        location.href = "BeIITransitions2.html";
+        }
+      else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+        location.href = "Polarizability.html";
+        }
+      else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+        location.href = "BeIITranAuto.html";
+        }
+      else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+        location.href = "OtherValues.html";
+        }
+        break;
+
+      case "Mg+":
+      if ( document.getElementById("nav-home-tab").classList.contains('active')){
+        // document.getElementById("demo").innerHTML = 'xxxxxxxxx';
+        location.href = "MgIITransitions2.html";
+        }
+      else if (document.getElementById("nav-profile-tab").classList.contains('active')){
+        location.href = "Polarizability.html";
+        }
+      else if (document.getElementById("nav-profile-tabTR").classList.contains('active')){
+        location.href = "MgIITranAuto.html";
+        }
+      else if (document.getElementById("nav-profile-tabOV").classList.contains('active')){
+        location.href = "OtherValues.html";
+        }
+        break;
+
+      case "Ca+ ":
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "Sr+":
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "Ba+":
+        document.getElementById("iframe").src = ""
+        break;
+
+      case "Ra+":
+        document.getElementById("iframe").src = ""
+        break;
+    }
+  }
+
+   </script>
+
+
+<body onload="load()" onclick="getFocus();">
+
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item ">
+    <a class="nav-link" href="index.html" style = 'color: white'>Home <span class="sr-only">(current)</span></a>
+  </li>
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false" style = 'color: white'>Matrix Elements</a>
+    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="Li.html">Li</a>
+      <a class="dropdown-item" href="Na.html" >Na</a>
+      <a class="dropdown-item" href="K.html" >K</a>
+      <a class="dropdown-item" href="Rb.html" >Rb</a>
+      <a class="dropdown-item" href="Cs.html" >Cs</a>
+      <a class="dropdown-item" href="Fr.html" >Fr</a>
+      <a class="dropdown-item" href="BeII.html" >Be+</a>
+      <a class="dropdown-item" href="MgII.html" >Mg+</a>
+      <a class="dropdown-item" href="CaII.html" >Ca+</a>
+      <a class="dropdown-item" href="SrII.html" >Sr+</a>
+      <a class="dropdown-item" href="BaII.html" >Ba+</a>
+      <a class="dropdown-item" href="RaII.html" >Ra+</a>
+    </div>
+  </li>
+
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false" style = 'font-weight: bold'>Transition Rates</a>
+    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="LiTranAuto.html">Li</a>
+      <a class="dropdown-item" href="NaTranAuto.html" >Na</a>
+      <a class="dropdown-item" href="KTranAuto.html" >K</a>
+      <a class="dropdown-item" href="RbTranAuto.html" >Rb</a>
+      <a class="dropdown-item active" href="CsTranAuto.html" >Cs</a>
+      <a class="dropdown-item" href="FrTranAuto.html" >Fr</a>
+      <a class="dropdown-item" href="BeIITranAuto.html" >Be+</a>
+      <a class="dropdown-item" href="MgIITranAuto.html" >Mg+</a>
+      <a class="dropdown-item" href="CaIITranAuto.html" >Ca+</a>
+      <a class="dropdown-item" href="SrIITranAuto.html" >Sr+</a>
+      <a class="dropdown-item" href="BaIITranAuto.html" >Ba+</a>
+      <a class="dropdown-item" href="RaIITranAuto.html" >Ra+</a>
+    </div>
+  </li>
+<!-- Dropdown -->
+<li class="nav-item dropdown ">
+  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false" style = 'color: white'>Polarizabilities</a>
+  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="">Li</a>
+    <a class="dropdown-item" href="">Na</a>
+    <a class="dropdown-item" href="" >K</a>
+    <a class="dropdown-item" href="" >Rb</a>
+    <a class="dropdown-item" href="Polarizability.html">Cs</a>
+    <a class="dropdown-item" href="">Fr</a>
+    <a class="dropdown-item" href="" >Be+</a>
+    <a class="dropdown-item" href="" >Mg+</a>
+    <a class="dropdown-item" href="" >Ca+</a>
+    <a class="dropdown-item" href="">Sr+</a>
+    <a class="dropdown-item" href="" >Ba+</a>
+    <a class="dropdown-item" href="" >Ra+</a>
+  </div>
+</li>
+
+<li class="nav-item dropdown ">
+  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false" style = 'color: white'>Other Data</a>
+  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="">Li</a>
+    <a class="dropdown-item" href="">Na</a>
+    <a class="dropdown-item" href="" >K</a>
+    <a class="dropdown-item" href="" >Rb</a>
+    <a class="dropdown-item" href="OtherValues.html">Cs</a>
+    <a class="dropdown-item" href="">Fr</a>
+    <a class="dropdown-item" href="" >Be+</a>
+    <a class="dropdown-item" href="" >Mg+</a>
+    <a class="dropdown-item" href="">Ca+</a>
+    <a class="dropdown-item" href="">Sr+</a>
+    <a class="dropdown-item" href="" >Ba+</a>
+    <a class="dropdown-item" href="" >Ra+</a>
+  </div>
+</li>
+
+<!-- Dropdown -->
+<li class="nav-item dropdown ">
+  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false" style = 'color: white'>Contact Us</a>
+  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="contact.html">Contact Us</a>
+    <a class="dropdown-item" href="inquiries.html">General Suggestions</a>
+    <a class="dropdown-item" href="upcomingChanges.html" >Upcoming Changes and Features</a>
+    <a class="dropdown-item" href="feedback.html" >Feedback</a>
+  </div>
+</li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="about.html" style = 'color: white'>About Us</a>
+  </li>
+  </ul>
+
+  <button class="btn2 btn-outline-success my-2 my-sm-0"  onclick="location.href = 'feedback.html';">Feedback</button>
+  </div>
+</nav>
+
+
+
+<style>
+navpol {
+  float: left;
+  text-align: center;
+  width: 30%;
+  background:  rgb(255, 255, 255);
+  padding: 5px;
+  height: 800px;
+
+}
+</style>
+<header>
+<h1> RaII E1 Transition Data</h1>
+</header>
+<body>
+
+
+
+<div class="container" id="BeIITransitions_7501" align=center x:publishsource="Excel">
+  <table border="0" cellspacing="5" cellpadding="5">
+    <tbody>
+      <tr>
+        <td>Minimum Wavelength(nm):</td>
+        <td><input type="text" id="min" name="min"></td>
+    </tr>
+    <tr>
+        <td>Maximum Wavelength(nm):</td>
+        <td><input type="text" id="max" name="max"></td>
+    </tr>
+
+      <P align=center id="demo" > </P>
+      <div id="BeIITransitions_7501" align=center x:publishsource="Excel">
+      <div class="export btn-group">
+          <button class="excel btn2 noprint"  aria-label="Export"  type="button" title="Export data" id="exporttable"> Excel </button>
+      </div>
+      <a href='CsTranAuto.html' button class="btn2" style="position: absolute;left:0;top:1"> Transition Rates </a>
+
+</tbody>
+</table>
+
+<table id="htmltable" class="table table-striped table-bordered display" style="width:100%">
+	<thead>
+			<tr>
+				<th>Initial</th>
+				<th>Final</th>
+				<th>Matrix element (a.u.)</th>
+				<th>Wavelength (nm)</th>
+				<th>Transition Rate (s<sup>-1</sup>)</th>
+				<th>Branching ratio</th>
+			</tr>
+	</thead>
+		<tbody>
+
+   <tr>
+      <td>8s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>2.5184</td>
+      <td>453.438</td>
+      <td>6.892E+07</td>
+      <td>0.3827</td>
+    </tr>
+    <tr>
+      <td>8s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>4.6449</td>
+      <td>581.524</td>
+      <td>1.1114E+08</td>
+      <td>0.6173</td>
+    </tr>
+    <tr>
+      <td>9s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.7021</td>
+      <td>264.453</td>
+      <td>2.700E+07</td>
+      <td>0.2512</td>
+    </tr>
+    <tr>
+      <td>9s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>1.0330</td>
+      <td>303.431</td>
+      <td>3.870E+07</td>
+      <td>0.3600</td>
+    </tr>
+    <tr>
+      <td>9s<sub>1/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>5.033</td>
+      <td>1168.36</td>
+      <td>1.609E+07</td>
+      <td>0.1497</td>
+    </tr>
+    <tr>
+      <td>9s<sub>1/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>9.035</td>
+      <td>1476.39</td>
+      <td>2.5699E+07</td>
+      <td>0.2391</td>
+    </tr>
+    <tr>
+      <td>10s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.3841</td>
+      <td>219.841</td>
+      <td>1.407E+07</td>
+      <td>0.2179</td>
+    </tr>
+    <tr>
+      <td>10s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.5389</td>
+      <td>246.124</td>
+      <td>1.973E+07</td>
+      <td>0.3057</td>
+    </tr>
+    <tr>
+      <td>10s<sub>1/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>1.2636</td>
+      <td>616.05</td>
+      <td>6.918E+06</td>
+      <td>0.1072</td>
+    </tr>
+    <tr>
+      <td>10s<sub>1/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>1.770</td>
+      <td>692.20</td>
+      <td>9.57E+06</td>
+      <td>0.1482</td>
+    </tr>
+    <tr>
+      <td>10s<sub>1/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>8.298</td>
+      <td>2325</td>
+      <td>5.548E+06</td>
+      <td>0.0859</td>
+    </tr>
+    <tr>
+      <td>10s<sub>1/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>14.617</td>
+      <td>2916.9</td>
+      <td>8.722E+06</td>
+      <td>0.13511</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.2577</td>
+      <td>200.716</td>
+      <td>8.319E+06</td>
+      <td>0.2030</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.3545</td>
+      <td>222.400</td>
+      <td>1.157E+07</td>
+      <td>0.2824</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.6661</td>
+      <td>486.225</td>
+      <td>3.910E+06</td>
+      <td>0.09543</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.8879</td>
+      <td>532.46</td>
+      <td>5.291E+06</td>
+      <td>0.1291</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>1.9690</td>
+      <td>1158</td>
+      <td>2.528E+06</td>
+      <td>0.06170</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>2.668</td>
+      <td>1288.25</td>
+      <td>3.374E+06</td>
+      <td>0.08234</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>12.286</td>
+      <td>4040</td>
+      <td>2.327E+06</td>
+      <td>0.05679</td>
+    </tr>
+    <tr>
+      <td>11s<sub>1/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>21.471</td>
+      <td>5040</td>
+      <td>3.654E+06</td>
+      <td>0.0892</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.19160</td>
+      <td>190.43</td>
+      <td>5.385E+06</td>
+      <td>0.19537</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.2612</td>
+      <td>209.84</td>
+      <td>7.479E+06</td>
+      <td>0.2713</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.44089</td>
+      <td>429.97</td>
+      <td>2.477E+06</td>
+      <td>0.08987</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.5761</td>
+      <td>465.73</td>
+      <td>3.328E+06</td>
+      <td>0.12075</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>1.0111</td>
+      <td>883</td>
+      <td>1.5046E+06</td>
+      <td>0.05458</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>1.3048</td>
+      <td>956.6</td>
+      <td>1.970E+06</td>
+      <td>0.07147</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>2.8128</td>
+      <td>1935</td>
+      <td>1.1070E+06</td>
+      <td>0.04016</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>3.750</td>
+      <td>2138</td>
+      <td>1.457E+06</td>
+      <td>0.05285</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>11p<sub>1/2</sub></td>
+      <td>17.018</td>
+      <td>6410</td>
+      <td>1.113E+06</td>
+      <td>0.04038</td>
+    </tr>
+    <tr>
+      <td>12s<sub>1/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>29.542</td>
+      <td>7980</td>
+      <td>1.743E+06</td>
+      <td>0.06322</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.15033</td>
+      <td>184.168</td>
+      <td>3.665E+06</td>
+      <td>0.19064</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.20362</td>
+      <td>202.262</td>
+      <td>5.076E+06</td>
+      <td>0.2640</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.32375</td>
+      <td>399.31</td>
+      <td>1.6678E+06</td>
+      <td>0.08675</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.4186</td>
+      <td>429.97</td>
+      <td>2.233E+06</td>
+      <td>0.11614</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>0.6577</td>
+      <td>762.7</td>
+      <td>9.877E+05</td>
+      <td>0.05137</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>0.8309</td>
+      <td>817.0</td>
+      <td>1.2824E+06</td>
+      <td>0.06670</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>1.4179</td>
+      <td>1438</td>
+      <td>6.852E+05</td>
+      <td>0.03564</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>1.7888</td>
+      <td>1547</td>
+      <td>8.747E+05</td>
+      <td>0.04550</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>11p<sub>1/2</sub></td>
+      <td>3.8008</td>
+      <td>2989</td>
+      <td>5.480E+05</td>
+      <td>0.02850</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>4.997</td>
+      <td>3290</td>
+      <td>7.103E+05</td>
+      <td>0.03695</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>12p<sub>1/2</sub></td>
+      <td>22.495</td>
+      <td>9570</td>
+      <td>5.849E+05</td>
+      <td>0.03042</td>
+    </tr>
+    <tr>
+      <td>13s<sub>1/2</sub></td>
+      <td>12p<sub>3/2</sub></td>
+      <td>38.860</td>
+      <td>11890</td>
+      <td>9.11E+05</td>
+      <td>0.04737</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.12257</td>
+      <td>180.034</td>
+      <td>2.6082E+06</td>
+      <td>0.18755</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.16532</td>
+      <td>197.288</td>
+      <td>3.606E+06</td>
+      <td>0.2593</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.25307</td>
+      <td>380.37</td>
+      <td>1.1789E+06</td>
+      <td>0.08478</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.32509</td>
+      <td>408.09</td>
+      <td>1.5754E+06</td>
+      <td>0.11328</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>0.47914</td>
+      <td>696.5</td>
+      <td>6.884E+05</td>
+      <td>0.04950</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>0.5987</td>
+      <td>741.52</td>
+      <td>8.906E+05</td>
+      <td>0.06404</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>0.9120</td>
+      <td>1219</td>
+      <td>4.649E+05</td>
+      <td>0.03343</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>1.1251</td>
+      <td>1297</td>
+      <td>5.875E+05</td>
+      <td>0.04224</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>11p<sub>1/2</sub></td>
+      <td>1.8891</td>
+      <td>2178</td>
+      <td>3.501E+05</td>
+      <td>0.02518</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>2.3445</td>
+      <td>2333</td>
+      <td>4.385E+05</td>
+      <td>0.03153</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>12p<sub>1/2</sub></td>
+      <td>4.9326</td>
+      <td>4364</td>
+      <td>2.966E+05</td>
+      <td>0.02133</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>12p<sub>3/2</sub></td>
+      <td>6.418</td>
+      <td>4790</td>
+      <td>3.797E+05</td>
+      <td>0.02731</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>13p<sub>1/2</sub></td>
+      <td>28.718</td>
+      <td>13630</td>
+      <td>3.299E+05</td>
+      <td>0.02372</td>
+    </tr>
+    <tr>
+      <td>14s<sub>1/2</sub></td>
+      <td>13p<sub>3/2</sub></td>
+      <td>49.426</td>
+      <td>16910</td>
+      <td>5.122E+05</td>
+      <td>0.03683</td>
+    </tr>
+    <tr>
+      <td>7p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>3.537</td>
+      <td>1079.0916</td>
+      <td>1.009E+07</td>
+      <td>0.0892</td>
+    </tr>
+    <tr>
+      <td>7p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>3.231</td>
+      <td>468.35</td>
+      <td>1.029E+08</td>
+      <td>0.9108</td>
+    </tr>
+    <tr>
+      <td>7p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>1.505</td>
+      <td>707.9856</td>
+      <td>3.233E+06</td>
+      <td>0.01543</td>
+    </tr>
+    <tr>
+      <td>7p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>4.799</td>
+      <td>802.191</td>
+      <td>2.260E+07</td>
+      <td>0.1078</td>
+    </tr>
+    <tr>
+      <td>7p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>4.489</td>
+      <td>381.550</td>
+      <td>1.838E+08</td>
+      <td>0.8768</td>
+    </tr>
+    <tr>
+      <td>8p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.054</td>
+      <td>259.592</td>
+      <td>1.7E+05</td>
+      <td>0.0088</td>
+    </tr>
+    <tr>
+      <td>8p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.037</td>
+      <td>197.604</td>
+      <td>1.8E+05</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <td>8p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>9.543</td>
+      <td>5369.8</td>
+      <td>5.958E+05</td>
+      <td>0.03080</td>
+    </tr>
+    <tr>
+      <td>8p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>6.973</td>
+      <td>1388.65</td>
+      <td>1.839E+07</td>
+      <td>0.951</td>
+    </tr>
+    <tr>
+      <td>8p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.1450</td>
+      <td>248.091</td>
+      <td>6.97E+05</td>
+      <td>0.0134</td>
+    </tr>
+    <tr>
+      <td>8p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.383</td>
+      <td>258.739</td>
+      <td>4.29E+06</td>
+      <td>0.083</td>
+    </tr>
+    <tr>
+      <td>8p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.405</td>
+      <td>190.869</td>
+      <td>1.19E+07</td>
+      <td>0.230</td>
+    </tr>
+    <tr>
+      <td>8p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>4.029</td>
+      <td>2741.2</td>
+      <td>3.992E+05</td>
+      <td>0.00770</td>
+    </tr>
+    <tr>
+      <td>8p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>12.527</td>
+      <td>3173.0</td>
+      <td>2.488E+06</td>
+      <td>0.0480</td>
+    </tr>
+    <tr>
+      <td>8p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>9.334</td>
+      <td>1112.72</td>
+      <td>3.203E+07</td>
+      <td>0.618</td>
+    </tr>
+    <tr>
+      <td>9p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.019</td>
+      <td>198.20</td>
+      <td>5E+04</td>
+      <td>0.006</td>
+    </tr>
+    <tr>
+      <td>9p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.077</td>
+      <td>159.90</td>
+      <td>1.5E+06</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <td>9p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.465</td>
+      <td>724.9</td>
+      <td>5.76E+05</td>
+      <td>0.075</td>
+    </tr>
+    <tr>
+      <td>9p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.1803</td>
+      <td>522.6</td>
+      <td>2.31E+05</td>
+      <td>0.0301</td>
+    </tr>
+    <tr>
+      <td>9p<sub>1/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>16.946</td>
+      <td>12400</td>
+      <td>1.509E+05</td>
+      <td>0.0197</td>
+    </tr>
+    <tr>
+      <td>9p<sub>1/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>11.519</td>
+      <td>2960</td>
+      <td>5.159E+06</td>
+      <td>0.67</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0694</td>
+      <td>194.8324</td>
+      <td>3.30E+05</td>
+      <td>0.0172</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.185</td>
+      <td>201.3391</td>
+      <td>2.13E+06</td>
+      <td>0.111</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.139</td>
+      <td>157.703</td>
+      <td>2.5E+06</td>
+      <td>0.130</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.1248</td>
+      <td>681.83</td>
+      <td>2.49E+04</td>
+      <td>0.00129</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>0.155</td>
+      <td>705.72</td>
+      <td>3.48E+04</td>
+      <td>0.00181</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>1.046</td>
+      <td>499.866</td>
+      <td>4.44E+06</td>
+      <td>0.231</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>7.149</td>
+      <td>5969</td>
+      <td>1.218E+05</td>
+      <td>0.00633</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>8d<sub>5/2</sub></td>
+      <td>22.099</td>
+      <td>6961</td>
+      <td>7.335E+05</td>
+      <td>0.0381</td>
+    </tr>
+    <tr>
+      <td>9p<sub>3/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>15.173</td>
+      <td>2355.6</td>
+      <td>8.921E+06</td>
+      <td>0.463</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.010</td>
+      <td>176.65</td>
+      <td>1.7E+04</td>
+      <td>0.004</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.067</td>
+      <td>145.57</td>
+      <td>1.49E+06</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.1781</td>
+      <td>501.2</td>
+      <td>2.551E+05</td>
+      <td>0.059</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.0058</td>
+      <td>395.4</td>
+      <td>5.6E+02</td>
+      <td>0.000128</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>1.1993</td>
+      <td>1437</td>
+      <td>4.912E+05</td>
+      <td>0.113</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.4356</td>
+      <td>1049</td>
+      <td>1.664E+05</td>
+      <td>0.0382</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>25.927</td>
+      <td>23200</td>
+      <td>5.44E+04</td>
+      <td>0.0125</td>
+    </tr>
+    <tr>
+      <td>10p<sub>1/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>17.037</td>
+      <td>5390</td>
+      <td>1.880E+06</td>
+      <td>0.432</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0439</td>
+      <td>175.12</td>
+      <td>1.82E+05</td>
+      <td>0.0201</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.118</td>
+      <td>180.36</td>
+      <td>1.21E+06</td>
+      <td>0.134</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.069</td>
+      <td>144.53</td>
+      <td>8.1E+05</td>
+      <td>0.089</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.0608</td>
+      <td>489.2</td>
+      <td>1.597E+04</td>
+      <td>0.00177</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>0.08640</td>
+      <td>501.3</td>
+      <td>3.001E+04</td>
+      <td>0.00332</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.424</td>
+      <td>387.9</td>
+      <td>1.56E+06</td>
+      <td>0.173</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.072</td>
+      <td>1342</td>
+      <td>1.10E+03</td>
+      <td>0.000121</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>8d<sub>5/2</sub></td>
+      <td>0.1994</td>
+      <td>1386</td>
+      <td>7.56E+03</td>
+      <td>0.000836</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>1.7926</td>
+      <td>997.8</td>
+      <td>1.6387E+06</td>
+      <td>0.181</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>11.027</td>
+      <td>10830</td>
+      <td>4.85E+04</td>
+      <td>0.00536</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>9d<sub>5/2</sub></td>
+      <td>33.919</td>
+      <td>12600</td>
+      <td>2.904E+05</td>
+      <td>0.0321</td>
+    </tr>
+    <tr>
+      <td>10p<sub>3/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>22.261</td>
+      <td>4260</td>
+      <td>3.253E+06</td>
+      <td>0.360</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.005</td>
+      <td>166.06</td>
+      <td>7E+03</td>
+      <td>0.002</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.056</td>
+      <td>138.30</td>
+      <td>1.20E+06</td>
+      <td>0.42</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.1000</td>
+      <td>424.4</td>
+      <td>1.32E+05</td>
+      <td>0.046</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.030</td>
+      <td>346.03</td>
+      <td>2.2E+04</td>
+      <td>0.0078</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.4653</td>
+      <td>946.1</td>
+      <td>2.589E+05</td>
+      <td>0.090</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.0754</td>
+      <td>761.1</td>
+      <td>1.306E+04</td>
+      <td>0.0045</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>2.1649</td>
+      <td>2475</td>
+      <td>3.131E+05</td>
+      <td>0.109</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>0.7448</td>
+      <td>1830</td>
+      <td>9.17E+04</td>
+      <td>0.0319</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>36.593</td>
+      <td>38300</td>
+      <td>2.41E+04</td>
+      <td>0.0084</td>
+    </tr>
+    <tr>
+      <td>11p<sub>1/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>23.572</td>
+      <td>8840</td>
+      <td>8.15E+05</td>
+      <td>0.283</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0313</td>
+      <td>165.22</td>
+      <td>1.10E+05</td>
+      <td>0.0223</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.085</td>
+      <td>169.87</td>
+      <td>7.5E+05</td>
+      <td>0.152</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.041</td>
+      <td>137.722</td>
+      <td>3.3E+05</td>
+      <td>0.067</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.04035</td>
+      <td>419.01</td>
+      <td>1.121E+04</td>
+      <td>0.00227</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>0.0627</td>
+      <td>427.91</td>
+      <td>2.54E+04</td>
+      <td>0.00514</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.243</td>
+      <td>342.41</td>
+      <td>7.45E+05</td>
+      <td>0.151</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.0323</td>
+      <td>919.5</td>
+      <td>6.8E+02</td>
+      <td>0.000138</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>8d<sub>5/2</sub></td>
+      <td>0.0706</td>
+      <td>940.2</td>
+      <td>3.04E+03</td>
+      <td>0.000615</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.7423</td>
+      <td>743.8</td>
+      <td>6.783E+05</td>
+      <td>0.137</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.0229</td>
+      <td>2301</td>
+      <td>2.2E+01</td>
+      <td>0.0000044</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>9d<sub>5/2</sub></td>
+      <td>0.7066</td>
+      <td>2372</td>
+      <td>1.894E+04</td>
+      <td>0.00384</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>2.6829</td>
+      <td>1733</td>
+      <td>7.009E+05</td>
+      <td>0.142</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>15.595</td>
+      <td>17600</td>
+      <td>2.243E+04</td>
+      <td>0.00454</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>10d<sub>5/2</sub></td>
+      <td>47.87</td>
+      <td>20600</td>
+      <td>1.335E+05</td>
+      <td>0.0270</td>
+    </tr>
+    <tr>
+      <td>11p<sub>3/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>30.613</td>
+      <td>6960</td>
+      <td>1.409E+06</td>
+      <td>0.285</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.003</td>
+      <td>159.948</td>
+      <td>3E+03</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.047</td>
+      <td>134.040</td>
+      <td>9.2E+05</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.0667</td>
+      <td>386.69</td>
+      <td>7.8E+04</td>
+      <td>0.038</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.033</td>
+      <td>320.52</td>
+      <td>3.3E+04</td>
+      <td>0.016</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.26309</td>
+      <td>777.0</td>
+      <td>1.4947E+05</td>
+      <td>0.073</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.0082</td>
+      <td>647.7</td>
+      <td>2.5E+02</td>
+      <td>0.000124</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.8477</td>
+      <td>1577.1</td>
+      <td>1.856E+05</td>
+      <td>0.091</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>0.1710</td>
+      <td>1287.7</td>
+      <td>1.388E+04</td>
+      <td>0.0068</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>3.3669</td>
+      <td>3904</td>
+      <td>1.930E+05</td>
+      <td>0.095</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>1.114</td>
+      <td>2914</td>
+      <td>5.086E+04</td>
+      <td>0.0250</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>11d<sub>3/2</sub></td>
+      <td>48.96</td>
+      <td>5.9</td>
+      <td>1.203E+04</td>
+      <td>0.0059</td>
+    </tr>
+    <tr>
+      <td>12p<sub>1/2</sub></td>
+      <td>12s<sub>1/2</sub></td>
+      <td>31.135</td>
+      <td>13500</td>
+      <td>3.994E+05</td>
+      <td>0.196</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0239</td>
+      <td>159.428</td>
+      <td>7.2E+04</td>
+      <td>0.0239</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.066</td>
+      <td>163.759</td>
+      <td>5.0E+05</td>
+      <td>0.165</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.027</td>
+      <td>133.675</td>
+      <td>1.6E+05</td>
+      <td>0.053</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.02997</td>
+      <td>383.66</td>
+      <td>8.06E+03</td>
+      <td>0.00269</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>0.0489</td>
+      <td>391.11</td>
+      <td>2.02E+04</td>
+      <td>0.0068</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.163</td>
+      <td>318.44</td>
+      <td>4.18E+05</td>
+      <td>0.140</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.0238</td>
+      <td>764.9</td>
+      <td>6.40E+02</td>
+      <td>0.000214</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>8d<sub>5/2</sub></td>
+      <td>0.02862</td>
+      <td>779.1</td>
+      <td>8.77E+02</td>
+      <td>0.000293</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.4311</td>
+      <td>639.3</td>
+      <td>3.603E+05</td>
+      <td>0.120</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.0138</td>
+      <td>1528.0</td>
+      <td>2.72E+01</td>
+      <td>0.0000091</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>9d<sub>5/2</sub></td>
+      <td>0.3020</td>
+      <td>1559.2</td>
+      <td>1.219E+04</td>
+      <td>0.00407</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>1.1127</td>
+      <td>1254.7</td>
+      <td>3.175E+05</td>
+      <td>0.106</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>0.1513</td>
+      <td>3616</td>
+      <td>2.45E+02</td>
+      <td>0.000082</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>10d<sub>5/2</sub></td>
+      <td>1.37270</td>
+      <td>3725</td>
+      <td>1.8470E+04</td>
+      <td>0.00617</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>3.7272</td>
+      <td>2751</td>
+      <td>3.3813E+05</td>
+      <td>0.113</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>11d<sub>3/2</sub></td>
+      <td>20.899</td>
+      <td>26700</td>
+      <td>1.159E+04</td>
+      <td>0.00387</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>11d<sub>5/2</sub></td>
+      <td>64.05</td>
+      <td>31300</td>
+      <td>6.77E+04</td>
+      <td>0.0226</td>
+    </tr>
+    <tr>
+      <td>12p<sub>3/2</sub></td>
+      <td>12s<sub>1/2</sub></td>
+      <td>40.26</td>
+      <td>10590</td>
+      <td>6.919E+05</td>
+      <td>0.231</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.002</td>
+      <td>156.059</td>
+      <td>1E+03</td>
+      <td>0.0009</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.040</td>
+      <td>131.298</td>
+      <td>7.0E+05</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.0490</td>
+      <td>364.72</td>
+      <td>5.02E+04</td>
+      <td>0.033</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.0306</td>
+      <td>305.27</td>
+      <td>3.3E+04</td>
+      <td>0.022</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.17613</td>
+      <td>693.1</td>
+      <td>9.439E+04</td>
+      <td>0.063</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.0098</td>
+      <td>588.33</td>
+      <td>4.8E+02</td>
+      <td>0.00032</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.48043</td>
+      <td>1266.0</td>
+      <td>1.1523E+05</td>
+      <td>0.077</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>0.0553</td>
+      <td>1072.5</td>
+      <td>2.51E+03</td>
+      <td>0.00167</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>1.323</td>
+      <td>2428</td>
+      <td>1.240E+05</td>
+      <td>0.082</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>0.2857</td>
+      <td>2004.1</td>
+      <td>1.027E+04</td>
+      <td>0.0068</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>11d<sub>3/2</sub></td>
+      <td>4.806</td>
+      <td>5786</td>
+      <td>1.2082E+05</td>
+      <td>0.080</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>12s<sub>1/2</sub></td>
+      <td>1.547</td>
+      <td>4350</td>
+      <td>2.946E+04</td>
+      <td>0.0196</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>12d<sub>3/2</sub></td>
+      <td>63.04</td>
+      <td>8.5</td>
+      <td>6.62E+03</td>
+      <td>0.0044</td>
+    </tr>
+    <tr>
+      <td>13p<sub>1/2</sub></td>
+      <td>13s<sub>1/2</sub></td>
+      <td>39.732</td>
+      <td>19500</td>
+      <td>2.159E+05</td>
+      <td>0.143</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0191</td>
+      <td>155.713</td>
+      <td>4.9E+04</td>
+      <td>0.025</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.053</td>
+      <td>159.842</td>
+      <td>3.4E+05</td>
+      <td>0.176</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.020</td>
+      <td>131.053</td>
+      <td>9E+04</td>
+      <td>0.044</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.02363</td>
+      <td>362.83</td>
+      <td>5.92E+03</td>
+      <td>0.00303</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>0.0397</td>
+      <td>369.49</td>
+      <td>1.58E+04</td>
+      <td>0.0081</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.1201</td>
+      <td>303.95</td>
+      <td>2.60E+05</td>
+      <td>0.133</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.0190</td>
+      <td>686.35</td>
+      <td>5.67E+02</td>
+      <td>0.000290</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>8d<sub>5/2</sub></td>
+      <td>0.01242</td>
+      <td>697.79</td>
+      <td>2.30E+02</td>
+      <td>0.000118</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.2926</td>
+      <td>583.45</td>
+      <td>2.184E+05</td>
+      <td>0.112</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.0040</td>
+      <td>1243.7</td>
+      <td>4.2</td>
+      <td>0.0000021</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>9d<sub>5/2</sub></td>
+      <td>0.16498</td>
+      <td>1264.2</td>
+      <td>6.823E+03</td>
+      <td>0.00349</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>0.6465</td>
+      <td>1056.4</td>
+      <td>1.796E+05</td>
+      <td>0.092</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>0.0785</td>
+      <td>2346.6</td>
+      <td>2.42E+02</td>
+      <td>0.000124</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>10d<sub>5/2</sub></td>
+      <td>0.60420</td>
+      <td>2391.7</td>
+      <td>1.3515E+04</td>
+      <td>0.00691</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>1.5452</td>
+      <td>1948.6</td>
+      <td>1.6346E+05</td>
+      <td>0.0835</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>11d<sub>3/2</sub></td>
+      <td>0.3177</td>
+      <td>5346</td>
+      <td>3.35E+02</td>
+      <td>0.000171</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>11d<sub>5/2</sub></td>
+      <td>2.1985</td>
+      <td>5510</td>
+      <td>1.466E+04</td>
+      <td>0.00749</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>12s<sub>1/2</sub></td>
+      <td>4.9293</td>
+      <td>4097</td>
+      <td>1.7900E+05</td>
+      <td>0.091</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>12d<sub>3/2</sub></td>
+      <td>26.940</td>
+      <td>38400</td>
+      <td>6.47E+03</td>
+      <td>0.00331</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>12d<sub>5/2</sub></td>
+      <td>82.46</td>
+      <td>44600</td>
+      <td>3.877E+04</td>
+      <td>0.0198</td>
+    </tr>
+    <tr>
+      <td>13p<sub>3/2</sub></td>
+      <td>13s<sub>1/2</sub></td>
+      <td>51.20</td>
+      <td>15270</td>
+      <td>3.733E+05</td>
+      <td>0.191</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0015</td>
+      <td>153.417</td>
+      <td>7E+02</td>
+      <td>0.0006</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.0340</td>
+      <td>129.423</td>
+      <td>5.4E+05</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.0382</td>
+      <td>350.61</td>
+      <td>3.43E+04</td>
+      <td>0.0300</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.0276</td>
+      <td>295.325</td>
+      <td>3.0E+04</td>
+      <td>0.026</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.129553</td>
+      <td>643.87</td>
+      <td>6.3700E+04</td>
+      <td>0.056</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.01532</td>
+      <td>552.46</td>
+      <td>1.41E+03</td>
+      <td>0.00123</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.32196</td>
+      <td>1110.9</td>
+      <td>7.661E+04</td>
+      <td>0.067</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>0.0181</td>
+      <td>959.01</td>
+      <td>3.75E+02</td>
+      <td>0.00033</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>0.7499</td>
+      <td>1914.7</td>
+      <td>8.116E+04</td>
+      <td>0.071</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>0.1105</td>
+      <td>1641.2</td>
+      <td>2.80E+03</td>
+      <td>0.00244</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>11d<sub>3/2</sub></td>
+      <td>1.892</td>
+      <td>3531</td>
+      <td>8.23E+04</td>
+      <td>0.072</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>12s<sub>1/2</sub></td>
+      <td>0.4208</td>
+      <td>2939</td>
+      <td>7.07E+03</td>
+      <td>0.0062</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>12d<sub>3/2</sub></td>
+      <td>6.483</td>
+      <td>8190</td>
+      <td>7.758E+04</td>
+      <td>0.068</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>13s<sub>1/2</sub></td>
+      <td>2.044</td>
+      <td>6187</td>
+      <td>1.787E+04</td>
+      <td>0.0156</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>13d<sub>3/2</sub></td>
+      <td>78.83</td>
+      <td>1.18</td>
+      <td>3.86E+03</td>
+      <td>0.00337</td>
+    </tr>
+    <tr>
+      <td>14p<sub>1/2</sub></td>
+      <td>14s<sub>1/2</sub></td>
+      <td>49.363</td>
+      <td>27000</td>
+      <td>1.248E+05</td>
+      <td>0.109</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>6d<sub>3/2</sub></td>
+      <td>0.0158</td>
+      <td>153.175</td>
+      <td>3.5E+04</td>
+      <td>0.026</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>6d<sub>5/2</sub></td>
+      <td>0.0436</td>
+      <td>157.168</td>
+      <td>2.5E+05</td>
+      <td>0.184</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>7s<sub>1/2</sub></td>
+      <td>0.015</td>
+      <td>129.251</td>
+      <td>5.1E+04</td>
+      <td>0.038</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>7d<sub>3/2</sub></td>
+      <td>0.01936</td>
+      <td>349.35</td>
+      <td>4.45E+03</td>
+      <td>0.00329</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>7d<sub>5/2</sub></td>
+      <td>0.0331</td>
+      <td>355.51</td>
+      <td>1.24E+04</td>
+      <td>0.0091</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>8s<sub>1/2</sub></td>
+      <td>0.0937</td>
+      <td>294.430</td>
+      <td>1.74E+05</td>
+      <td>0.129</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>8d<sub>3/2</sub></td>
+      <td>0.01579</td>
+      <td>639.63</td>
+      <td>4.83E+02</td>
+      <td>0.000357</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>8d<sub>5/2</sub></td>
+      <td>0.00516</td>
+      <td>649.55</td>
+      <td>4.92E+01</td>
+      <td>0.0000364</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>9s<sub>1/2</sub></td>
+      <td>0.2170</td>
+      <td>549.34</td>
+      <td>1.439E+05</td>
+      <td>0.106</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>9d<sub>3/2</sub></td>
+      <td>0.00014</td>
+      <td>1098.3</td>
+      <td>1E-02</td>
+      <td>0.000000005</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>9d<sub>5/2</sub></td>
+      <td>0.10491</td>
+      <td>1114.3</td>
+      <td>4.030E+03</td>
+      <td>0.00298</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>10s<sub>1/2</sub></td>
+      <td>0.4402</td>
+      <td>949.64</td>
+      <td>1.1462E+05</td>
+      <td>0.0847</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>10d<sub>3/2</sub></td>
+      <td>0.0431</td>
+      <td>1877.7</td>
+      <td>1.42E+02</td>
+      <td>0.000105</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>10d<sub>5/2</sub></td>
+      <td>0.34349</td>
+      <td>1906.5</td>
+      <td>8.625E+03</td>
+      <td>0.00638</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>11s<sub>1/2</sub></td>
+      <td>0.8962</td>
+      <td>1613.9</td>
+      <td>9.678E+04</td>
+      <td>0.0716</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>11d<sub>3/2</sub></td>
+      <td>0.1617</td>
+      <td>3407</td>
+      <td>3.35E+02</td>
+      <td>0.000248</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>11d<sub>5/2</sub></td>
+      <td>0.97816</td>
+      <td>3472</td>
+      <td>1.1578E+04</td>
+      <td>0.00856</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>12s<sub>1/2</sub></td>
+      <td>2.0403</td>
+      <td>2853</td>
+      <td>9.081E+04</td>
+      <td>0.0671</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>12d<sub>3/2</sub></td>
+      <td>0.522</td>
+      <td>7550</td>
+      <td>3.21E+02</td>
+      <td>0.000237</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>12d<sub>5/2</sub></td>
+      <td>3.1853</td>
+      <td>7762</td>
+      <td>1.0990E+04</td>
+      <td>0.00812</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>13s<sub>1/2</sub></td>
+      <td>6.2906</td>
+      <td>5816</td>
+      <td>1.0187E+05</td>
+      <td>0.0753</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>13d<sub>3/2</sub></td>
+      <td>33.720</td>
+      <td>53200</td>
+      <td>3.82E+03</td>
+      <td>0.00282</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>13d<sub>5/2</sub></td>
+      <td>103.12</td>
+      <td>61600</td>
+      <td>2.302E+04</td>
+      <td>0.0170</td>
+    </tr>
+    <tr>
+      <td>14p<sub>3/2</sub></td>
+      <td>14s<sub>1/2</sub></td>
+      <td>63.44</td>
+      <td>21150</td>
+      <td>2.154E+05</td>
+      <td>0.159</td>
+    </tr>
+    <tr>
+      <td>7d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>4.303</td>
+      <td>365.061</td>
+      <td>1.928E+08</td>
+      <td>0.8538</td>
+    </tr>
+    <tr>
+      <td>7d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>2.386</td>
+      <td>443.750</td>
+      <td>3.301E+07</td>
+      <td>0.1462</td>
+    </tr>
+    <tr>
+      <td>7d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>2.56</td>
+      <td>39590</td>
+      <td>3.56E+01</td>
+      <td>0.000000180</td>
+    </tr>
+    <tr>
+      <td>7d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>6.93</td>
+      <td>434.186</td>
+      <td>1.983E+08</td>
+      <td>0.999999820</td>
+    </tr>
+    <tr>
+      <td>8d<sub>3/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>1.53</td>
+      <td>784.49</td>
+      <td>2.5E+06</td>
+      <td>0.020</td>
+    </tr>
+    <tr>
+      <td>8d<sub>3/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>17.2</td>
+      <td>4510</td>
+      <td>1.64E+06</td>
+      <td>0.0131</td>
+    </tr>
+    <tr>
+      <td>8d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>1.445</td>
+      <td>247.625</td>
+      <td>6.97E+07</td>
+      <td>0.5560</td>
+    </tr>
+    <tr>
+      <td>8d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.651</td>
+      <td>281.483</td>
+      <td>9.64E+06</td>
+      <td>0.0769</td>
+    </tr>
+    <tr>
+      <td>8d<sub>3/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>7.100</td>
+      <td>898.58</td>
+      <td>3.519E+07</td>
+      <td>0.2808</td>
+    </tr>
+    <tr>
+      <td>8d<sub>3/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>4.033</td>
+      <td>1070.32</td>
+      <td>6.72E+06</td>
+      <td>0.0536</td>
+    </tr>
+    <tr>
+      <td>8d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.35</td>
+      <td>770.06</td>
+      <td>9.2E+04</td>
+      <td>0.00087</td>
+    </tr>
+    <tr>
+      <td>8d<sub>5/2</sub></td>
+      <td>5f<sub>7/2</sub></td>
+      <td>1.7</td>
+      <td>787.30</td>
+      <td>1.9E+06</td>
+      <td>0.018</td>
+    </tr>
+    <tr>
+      <td>8d<sub>5/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>4.53</td>
+      <td>4070</td>
+      <td>1.03E+05</td>
+      <td>0.00098</td>
+    </tr>
+    <tr>
+      <td>8d<sub>5/2</sub></td>
+      <td>6f<sub>7/2</sub></td>
+      <td>20.6</td>
+      <td>4630</td>
+      <td>1.44E+06</td>
+      <td>0.0137</td>
+    </tr>
+    <tr>
+      <td>8d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>2.009</td>
+      <td>279.603</td>
+      <td>6.24E+07</td>
+      <td>0.592</td>
+    </tr>
+    <tr>
+      <td>8d<sub>5/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>11.51</td>
+      <td>1043.6</td>
+      <td>3.939E+07</td>
+      <td>0.374</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.45</td>
+      <td>518.774</td>
+      <td>7.4E+05</td>
+      <td>0.0102</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.92</td>
+      <td>1143.2</td>
+      <td>2.9E+05</td>
+      <td>0.0040</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.809</td>
+      <td>213.162</td>
+      <td>3.422E+07</td>
+      <td>0.4701</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.3393</td>
+      <td>237.783</td>
+      <td>4.34E+06</td>
+      <td>0.0596</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>25.9</td>
+      <td>5740</td>
+      <td>1.80E+06</td>
+      <td>0.0247</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>2.4554</td>
+      <td>566.32</td>
+      <td>1.681E+07</td>
+      <td>0.2310</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>1.1470</td>
+      <td>630.04</td>
+      <td>2.665E+06</td>
+      <td>0.03661</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>10.198</td>
+      <td>1747</td>
+      <td>9.89E+06</td>
+      <td>0.1358</td>
+    </tr>
+    <tr>
+      <td>9d<sub>3/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>5.922</td>
+      <td>2060.3</td>
+      <td>2.031E+06</td>
+      <td>0.02790</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.106</td>
+      <td>515.278</td>
+      <td>2.8E+04</td>
+      <td>0.00046</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>5f<sub>7/2</sub></td>
+      <td>0.49</td>
+      <td>522.938</td>
+      <td>5.7E+05</td>
+      <td>0.009</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.159</td>
+      <td>1126.4</td>
+      <td>6.0E+03</td>
+      <td>0.00010</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>6f<sub>7/2</sub></td>
+      <td>0.88</td>
+      <td>1165.4</td>
+      <td>1.7E+05</td>
+      <td>0.0028</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>1.070</td>
+      <td>237.045</td>
+      <td>2.901E+07</td>
+      <td>0.482</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>6.78</td>
+      <td>5339.0</td>
+      <td>1.02E+05</td>
+      <td>0.00169</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>7f<sub>7/2</sub></td>
+      <td>31.1</td>
+      <td>5870</td>
+      <td>1.61E+06</td>
+      <td>0.0268</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>3.479</td>
+      <td>624.89</td>
+      <td>1.675E+07</td>
+      <td>0.2782</td>
+    </tr>
+    <tr>
+      <td>9d<sub>5/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>16.915</td>
+      <td>2006.2</td>
+      <td>1.1965E+07</td>
+      <td>0.1988</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.231</td>
+      <td>433.737</td>
+      <td>3.3E+05</td>
+      <td>0.0073</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.29</td>
+      <td>798.3</td>
+      <td>8E+04</td>
+      <td>0.0019</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.5447</td>
+      <td>197.270</td>
+      <td>1.958E+07</td>
+      <td>0.4332</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.2202</td>
+      <td>218.176</td>
+      <td>2.37E+06</td>
+      <td>0.0523</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.3</td>
+      <td>1811.1</td>
+      <td>9E+03</td>
+      <td>0.0002</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>1.3841</td>
+      <td>466.482</td>
+      <td>9.560E+06</td>
+      <td>0.2115</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.6044</td>
+      <td>508.872</td>
+      <td>1.404E+06</td>
+      <td>0.03108</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>33.1</td>
+      <td>8200</td>
+      <td>1.01E+06</td>
+      <td>0.0223</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>3.559</td>
+      <td>1052</td>
+      <td>5.509E+06</td>
+      <td>0.1219</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>1.7034</td>
+      <td>1158.36</td>
+      <td>9.456E+05</td>
+      <td>0.02092</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>13.815</td>
+      <td>2986</td>
+      <td>3.630E+06</td>
+      <td>0.0803</td>
+    </tr>
+    <tr>
+      <td>10d<sub>3/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>8.080</td>
+      <td>3502</td>
+      <td>7.702E+05</td>
+      <td>0.01704</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.054</td>
+      <td>432.229</td>
+      <td>1.2E+04</td>
+      <td>0.00033</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>5f<sub>7/2</sub></td>
+      <td>0.25</td>
+      <td>437.606</td>
+      <td>2.5E+05</td>
+      <td>0.007</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.0464</td>
+      <td>793.2</td>
+      <td>1.46E+03</td>
+      <td>0.0000395</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>6f<sub>7/2</sub></td>
+      <td>0.27</td>
+      <td>812.4</td>
+      <td>4.4E+04</td>
+      <td>0.0012</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.702</td>
+      <td>217.794</td>
+      <td>1.612E+07</td>
+      <td>0.438</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.20</td>
+      <td>1785.1</td>
+      <td>2.4E+03</td>
+      <td>0.00006</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>7f<sub>7/2</sub></td>
+      <td>0.6</td>
+      <td>1840.8</td>
+      <td>1.7E+04</td>
+      <td>0.0005</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>1.868</td>
+      <td>506.798</td>
+      <td>9.05E+06</td>
+      <td>0.2456</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>8.59</td>
+      <td>7700</td>
+      <td>5.5E+04</td>
+      <td>0.00149</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>8f<sub>7/2</sub></td>
+      <td>39.9</td>
+      <td>8400</td>
+      <td>9.1E+05</td>
+      <td>0.0246</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>5.120</td>
+      <td>1147.67</td>
+      <td>5.857E+06</td>
+      <td>0.1589</td>
+    </tr>
+    <tr>
+      <td>10d<sub>5/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>23.020</td>
+      <td>3406</td>
+      <td>4.529E+06</td>
+      <td>0.1229</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.146</td>
+      <td>392.982</td>
+      <td>1.8E+05</td>
+      <td>0.0059</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.140</td>
+      <td>670.4</td>
+      <td>3.3E+04</td>
+      <td>0.0011</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.4033</td>
+      <td>188.384</td>
+      <td>1.232E+07</td>
+      <td>0.4074</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.1595</td>
+      <td>207.359</td>
+      <td>1.445E+06</td>
+      <td>0.0478</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.20</td>
+      <td>1263.83</td>
+      <td>1.0E+04</td>
+      <td>0.0003</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.9364</td>
+      <td>419.674</td>
+      <td>6.008E+06</td>
+      <td>0.1986</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.3951</td>
+      <td>453.674</td>
+      <td>8.47E+05</td>
+      <td>0.02800</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>2.88</td>
+      <td>2770</td>
+      <td>1.98E+05</td>
+      <td>0.0066</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>2.0059</td>
+      <td>841</td>
+      <td>3.431E+06</td>
+      <td>0.1134</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>0.8989</td>
+      <td>907.12</td>
+      <td>5.483E+05</td>
+      <td>0.01813</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>9f<sub>5/2</sub></td>
+      <td>45.77</td>
+      <td>1.1</td>
+      <td>7.0E+05</td>
+      <td>0.0232</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>4.799</td>
+      <td>1742</td>
+      <td>2.205E+06</td>
+      <td>0.0729</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>2.3421</td>
+      <td>1906</td>
+      <td>4.013E+05</td>
+      <td>0.01327</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>11p<sub>1/2</sub></td>
+      <td>17.942</td>
+      <td>4690</td>
+      <td>1.576E+06</td>
+      <td>0.0521</td>
+    </tr>
+    <tr>
+      <td>11d<sub>3/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>10.583</td>
+      <td>5480</td>
+      <td>3.444E+05</td>
+      <td>0.01138</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.034</td>
+      <td>392.14</td>
+      <td>6.3E+03</td>
+      <td>0.00026</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>5f<sub>7/2</sub></td>
+      <td>0.16</td>
+      <td>396.56</td>
+      <td>1.3E+05</td>
+      <td>0.0054</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.019</td>
+      <td>667.9</td>
+      <td>4.2E+02</td>
+      <td>0.000017</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>6f<sub>7/2</sub></td>
+      <td>0.118</td>
+      <td>681.4</td>
+      <td>1.50E+04</td>
+      <td>0.00061</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.512</td>
+      <td>207.12</td>
+      <td>1.00E+07</td>
+      <td>0.407</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.10</td>
+      <td>1255.2</td>
+      <td>1.7E+03</td>
+      <td>0.00007</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>7f<sub>7/2</sub></td>
+      <td>0.31</td>
+      <td>1282.4</td>
+      <td>1.5E+04</td>
+      <td>0.0006</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>1.2340</td>
+      <td>452.6</td>
+      <td>5.548E+06</td>
+      <td>0.227</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>0.87</td>
+      <td>2730</td>
+      <td>1.26E+04</td>
+      <td>0.00051</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>8f<sub>7/2</sub></td>
+      <td>3.48</td>
+      <td>2810</td>
+      <td>1.83E+05</td>
+      <td>0.0075</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>2.750</td>
+      <td>902.6</td>
+      <td>3.472E+06</td>
+      <td>0.1418</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>9f<sub>5/2</sub></td>
+      <td>11.872</td>
+      <td>1.1</td>
+      <td>3.8E+04</td>
+      <td>0.00154</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>9f<sub>7/2</sub></td>
+      <td>54.81</td>
+      <td>1.2</td>
+      <td>6.0E+05</td>
+      <td>0.0245</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>6.997</td>
+      <td>1886</td>
+      <td>2.463E+06</td>
+      <td>0.1006</td>
+    </tr>
+    <tr>
+      <td>11d<sub>5/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>30.065</td>
+      <td>5320</td>
+      <td>2.025E+06</td>
+      <td>0.0827</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.069</td>
+      <td>369.59</td>
+      <td>4.7E+04</td>
+      <td>0.0022</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.060</td>
+      <td>605.0</td>
+      <td>8.3E+03</td>
+      <td>0.00039</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.316</td>
+      <td>182.84</td>
+      <td>8.29E+06</td>
+      <td>0.389</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.1233</td>
+      <td>200.66</td>
+      <td>9.53E+05</td>
+      <td>0.0448</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.44</td>
+      <td>1050.1</td>
+      <td>8E+04</td>
+      <td>0.0039</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.6997</td>
+      <td>393.11</td>
+      <td>4.082E+06</td>
+      <td>0.1918</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.2905</td>
+      <td>422.79</td>
+      <td>5.655E+05</td>
+      <td>0.0266</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>1.28</td>
+      <td>1920</td>
+      <td>1.17E+05</td>
+      <td>0.0055</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>1.3563</td>
+      <td>740.4</td>
+      <td>2.296E+06</td>
+      <td>0.1079</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>0.5911</td>
+      <td>791.5</td>
+      <td>3.570E+05</td>
+      <td>0.01677</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>9f<sub>5/2</sub></td>
+      <td>4.125</td>
+      <td>4000</td>
+      <td>1.32E+05</td>
+      <td>0.00619</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>2.6917</td>
+      <td>1361</td>
+      <td>1.4571E+06</td>
+      <td>0.0685</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>1.2347</td>
+      <td>1458</td>
+      <td>2.490E+05</td>
+      <td>0.01170</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>10f<sub>5/2</sub></td>
+      <td>61.0</td>
+      <td>1.6</td>
+      <td>4.9E+05</td>
+      <td>0.023</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>11p<sub>1/2</sub></td>
+      <td>6.192</td>
+      <td>2673</td>
+      <td>1.0163E+06</td>
+      <td>0.0478</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>3.0580</td>
+      <td>2912</td>
+      <td>1.919E+05</td>
+      <td>0.00902</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>12p<sub>1/2</sub></td>
+      <td>22.586</td>
+      <td>6940</td>
+      <td>7.714E+05</td>
+      <td>0.0362</td>
+    </tr>
+    <tr>
+      <td>12d<sub>3/2</sub></td>
+      <td>12p<sub>3/2</sub></td>
+      <td>13.406</td>
+      <td>8090</td>
+      <td>1.720E+05</td>
+      <td>0.00808</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.024</td>
+      <td>369.101</td>
+      <td>3.8E+03</td>
+      <td>0.00022</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>5f<sub>7/2</sub></td>
+      <td>0.11</td>
+      <td>373.015</td>
+      <td>8E+04</td>
+      <td>0.0047</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.010</td>
+      <td>603.7</td>
+      <td>1.6E+02</td>
+      <td>0.000009</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>6f<sub>7/2</sub></td>
+      <td>0.067</td>
+      <td>614.8</td>
+      <td>6.6E+03</td>
+      <td>0.00039</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.398</td>
+      <td>200.514</td>
+      <td>6.63E+06</td>
+      <td>0.389</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.065</td>
+      <td>1046.15</td>
+      <td>1.2E+03</td>
+      <td>0.00007</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>7f<sub>7/2</sub></td>
+      <td>0.21</td>
+      <td>1065.02</td>
+      <td>1.3E+04</td>
+      <td>0.0007</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.9030</td>
+      <td>422.143</td>
+      <td>3.660E+06</td>
+      <td>0.2146</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>0.388</td>
+      <td>1900</td>
+      <td>7.4E+03</td>
+      <td>0.00043</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>8f<sub>7/2</sub></td>
+      <td>1.54</td>
+      <td>1940</td>
+      <td>1.09E+05</td>
+      <td>0.0064</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>1.8129</td>
+      <td>789.25</td>
+      <td>2.257E+06</td>
+      <td>0.1324</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>9f<sub>5/2</sub></td>
+      <td>1.2384</td>
+      <td>4000</td>
+      <td>8.26E+03</td>
+      <td>0.000484</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>9f<sub>7/2</sub></td>
+      <td>5.07</td>
+      <td>4100</td>
+      <td>1.25E+05</td>
+      <td>0.0073</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>3.7479</td>
+      <td>1451</td>
+      <td>1.5535E+06</td>
+      <td>0.0911</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>10f<sub>5/2</sub></td>
+      <td>15.82</td>
+      <td>1.5</td>
+      <td>2.6E+04</td>
+      <td>0.00153</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>10f<sub>7/2</sub></td>
+      <td>72.5</td>
+      <td>1.6</td>
+      <td>4.0E+05</td>
+      <td>0.023</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>9.101</td>
+      <td>2881</td>
+      <td>1.1691E+06</td>
+      <td>0.0686</td>
+    </tr>
+    <tr>
+      <td>12d<sub>5/2</sub></td>
+      <td>12p<sub>3/2</sub></td>
+      <td>38.006</td>
+      <td>7860</td>
+      <td>1.0044E+06</td>
+      <td>0.0589</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.051</td>
+      <td>354.69</td>
+      <td>3.0E+04</td>
+      <td>0.0019</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.0514</td>
+      <td>566.1</td>
+      <td>7.4E+03</td>
+      <td>0.00048</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>7p<sub>1/2</sub></td>
+      <td>0.258</td>
+      <td>179.116</td>
+      <td>5.86E+06</td>
+      <td>0.378</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.0995</td>
+      <td>196.185</td>
+      <td>6.64E+05</td>
+      <td>0.0429</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.31</td>
+      <td>938.1</td>
+      <td>6.1E+04</td>
+      <td>0.0039</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>8p<sub>1/2</sub></td>
+      <td>0.5510</td>
+      <td>376.30</td>
+      <td>2.886E+06</td>
+      <td>0.1864</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.22564</td>
+      <td>403.40</td>
+      <td>3.929E+05</td>
+      <td>0.0254</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>0.79</td>
+      <td>1570</td>
+      <td>8.0E+04</td>
+      <td>0.0052</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>9p<sub>1/2</sub></td>
+      <td>1.0084</td>
+      <td>682.9</td>
+      <td>1.6171E+06</td>
+      <td>0.1044</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>0.4307</td>
+      <td>726.2</td>
+      <td>2.454E+05</td>
+      <td>0.01585</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>9f<sub>5/2</sub></td>
+      <td>1.798</td>
+      <td>2760</td>
+      <td>7.75E+04</td>
+      <td>0.00501</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>10p<sub>1/2</sub></td>
+      <td>1.8140</td>
+      <td>1178</td>
+      <td>1.0187E+06</td>
+      <td>0.0658</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>0.8057</td>
+      <td>1251</td>
+      <td>1.6795E+05</td>
+      <td>0.01085</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>10f<sub>5/2</sub></td>
+      <td>5.31</td>
+      <td>5600</td>
+      <td>8.0E+04</td>
+      <td>0.0052</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>11p<sub>1/2</sub></td>
+      <td>3.4543</td>
+      <td>2050</td>
+      <td>7.011E+05</td>
+      <td>0.0453</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>1.6056</td>
+      <td>2188</td>
+      <td>1.2472E+05</td>
+      <td>0.00806</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>11f<sub>5/2</sub></td>
+      <td>78.5</td>
+      <td>2.1</td>
+      <td>3.5E+05</td>
+      <td>0.023</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>12p<sub>1/2</sub></td>
+      <td>7.742</td>
+      <td>3881</td>
+      <td>5.192E+05</td>
+      <td>0.0335</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>12p<sub>3/2</sub></td>
+      <td>3.8584</td>
+      <td>4215</td>
+      <td>1.0072E+05</td>
+      <td>0.00651</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>13p<sub>1/2</sub></td>
+      <td>27.75</td>
+      <td>9820</td>
+      <td>4.120E+05</td>
+      <td>0.0266</td>
+    </tr>
+    <tr>
+      <td>13d<sub>3/2</sub></td>
+      <td>13p<sub>3/2</sub></td>
+      <td>16.551</td>
+      <td>11410</td>
+      <td>9.339E+04</td>
+      <td>0.00603</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>5f<sub>5/2</sub></td>
+      <td>0.0110</td>
+      <td>354.37</td>
+      <td>9E+02</td>
+      <td>0.00007</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>5f<sub>7/2</sub></td>
+      <td>0.004</td>
+      <td>357.98</td>
+      <td>1E+02</td>
+      <td>0.00001</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>6f<sub>5/2</sub></td>
+      <td>0.021</td>
+      <td>565.3</td>
+      <td>8E+02</td>
+      <td>0.000068</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>6f<sub>7/2</sub></td>
+      <td>0.073</td>
+      <td>575.0</td>
+      <td>9.4E+03</td>
+      <td>0.00075</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>7p<sub>3/2</sub></td>
+      <td>0.322</td>
+      <td>196.087</td>
+      <td>4.65E+06</td>
+      <td>0.375</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>7f<sub>5/2</sub></td>
+      <td>0.099</td>
+      <td>935.9</td>
+      <td>4.0E+03</td>
+      <td>0.00032</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>7f<sub>7/2</sub></td>
+      <td>0.38</td>
+      <td>951.0</td>
+      <td>5.6E+04</td>
+      <td>0.0045</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>8p<sub>3/2</sub></td>
+      <td>0.7090</td>
+      <td>402.99</td>
+      <td>2.594E+06</td>
+      <td>0.2090</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>8f<sub>5/2</sub></td>
+      <td>0.239</td>
+      <td>1570</td>
+      <td>5.0E+03</td>
+      <td>0.00040</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>8f<sub>7/2</sub></td>
+      <td>0.95</td>
+      <td>1590</td>
+      <td>7.5E+04</td>
+      <td>0.0060</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>9p<sub>3/2</sub></td>
+      <td>1.3339</td>
+      <td>724.8</td>
+      <td>1.5778E+06</td>
+      <td>0.1271</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>9f<sub>5/2</sub></td>
+      <td>0.5464</td>
+      <td>2740</td>
+      <td>4.88E+03</td>
+      <td>0.000393</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>9f<sub>7/2</sub></td>
+      <td>2.21</td>
+      <td>2810</td>
+      <td>7.5E+04</td>
+      <td>0.00600</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>10p<sub>3/2</sub></td>
+      <td>2.4660</td>
+      <td>1247</td>
+      <td>1.0590E+06</td>
+      <td>0.0853</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>10f<sub>5/2</sub></td>
+      <td>1.60</td>
+      <td>5500</td>
+      <td>5.1E+03</td>
+      <td>0.00041</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>10f<sub>7/2</sub></td>
+      <td>6.69</td>
+      <td>5800</td>
+      <td>7.9E+04</td>
+      <td>0.0063</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>11p<sub>3/2</sub></td>
+      <td>4.8529</td>
+      <td>2175</td>
+      <td>7.724E+05</td>
+      <td>0.0622</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>11f<sub>5/2</sub></td>
+      <td>20.4</td>
+      <td>2.0</td>
+      <td>1.8E+04</td>
+      <td>0.00148</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>11f<sub>7/2</sub></td>
+      <td>92.8</td>
+      <td>2.2</td>
+      <td>2.7E+05</td>
+      <td>0.022</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>12p<sub>3/2</sub></td>
+      <td>11.450</td>
+      <td>4170</td>
+      <td>6.107E+05</td>
+      <td>0.0492</td>
+    </tr>
+    <tr>
+      <td>13d<sub>5/2</sub></td>
+      <td>13p<sub>3/2</sub></td>
+      <td>46.847</td>
+      <td>11090</td>
+      <td>5.438E+05</td>
+      <td>0.0438</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+    </body>
+    <script>
+        $(document).ready(function(){
+
+            /* export Excel button */
+          $(".excel").click(function(){
+            /* var table = $("#secondTable");  */
+            if ($('#secondTable').length)
+            {
+              var table = $("#secondTable");
+            }
+            else
+            {
+              var table = $("#htmltable");
+            }
+            if(table && table.length){
+            $(table).table2excel({
+            exclude: ".noExl",
+            name: document.getElementById("demo").innerText,
+            filename:  document.getElementById("transitionType").innerText+ document.getElementById("demo").innerText+ new Date().toISOString().replace(/[\-\:\.]/g, "") + ".xls",
+            fileext: ".xls",
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true,
+            preserveColors: false
+            });
+            }
+            });
+        /* create a table to save data */
+          function makeTable(container, data) {
+            var table = $("<table/>").addClass('CSSTableGenerator');
+            $.each(data, function(rowIndex, r) {
+                var row = $("<tr/>");
+                $.each(r, function(colIndex, c) {
+                    row.append($("<t"+(rowIndex == 0 ?  "h" : "d")+"/>").text(c));
+                });
+                table.append(row);
+            });
+            return container.append(table);
+        }
+        /* append data to table */
+          function appendRow(table, rowData) {
+            var lastRow = $('<tr/>').appendTo(table.find('table:last'));
+            $.each(rowData, function(colIndex, c) {
+                lastRow.append($('<td/>').text(c));
+            });
+            return lastRow;
+          }
+        /* delete previous rows */
+           function deleteRows() {
+           $("#secondTable").empty();
+
+          }
+
+
+            $(".button").click(function(){
+                document.getElementById("demo").innerHTML = this.value;
+                document. getElementById("htmltable").style.display="block";
+                search_table($(this).val());
+            });
+
+
+
+            function search_table(value){
+
+                      $("#secondTable").remove();
+                      /* location.reload(true); */
+                      var data = [["From State", "To State", "wavelength nm", "Matrix Element a.u."]];
+                      var Newtable = makeTable($(document.body),data);
+                      $(".CSSTableGenerator").attr('id','secondTable');
+                      $("#secondTable").hide();
+                 $('#Na_table tr').each(function(){
+                      var found = 'false';
+                          $(this).each(function(){
+                          /* when the keyword is found in the first column */
+                           if($(this).find('td').eq(0).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                           {
+                              found = 'true';
+                           }
+                            /*if the keyword is found in the second column then toggle column1 and column2 contents  */
+                           if($(this).find('td').eq(1).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                           /* .html() brings the whole format of the cell */
+                           {  var secondColumn = $(this).find('td').eq(1).html();
+                              var firstColumn = $(this).find('td').eq(0).html();
+                            /* contents toggled here */
+                              $(this).find('td').eq(0).html(secondColumn);
+                              $(this).find('td').eq(1).html(firstColumn);
+                              found = 'true';
+                           }
+                      });
+                       /*if the row contains this search keyword and it is in the first column then show it as it is. If it is in the second column then switch the two fileds together */
+
+                       if(found == 'true')
+                      {
+                          $(this).show();
+                          appendRow(Newtable, [$(this).find('td').eq(0).text(),$(this).find('td').eq(1).text(),$(this).find('td').eq(2).text(),$(this).find('td').eq(3).text()]);
+
+                      }
+                      else
+                      {
+                        $(this).hide();
+                      }
+                 });
+            }
+
+
+        });
+        </script>
