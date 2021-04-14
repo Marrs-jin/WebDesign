@@ -1,19 +1,25 @@
 # WebDesign
-TransitionManualInput is the main file, asks to enter element ("Fr", "CaII", etc.)
-
-OtherData is equivalent for Other data pages
-
+# TransitionManualInput 
+is the main file, asks to enter element ("Fr", "CaII", etc.)
 Creates 3 HTML files: Transition rate page, Matrix element page, Transition rate all states page
 
-LoadFunctions.py reads in relevant functions
+# OtherData 
+is equivalent for Other data pages
 
-Format_save_copy.py is for getting "all_state" data into pretty "save_copy", with necessasry columns and subscript.
+# LoadFunctions.py 
+reads in relevant functions
 
-# LoadInElement.py is what creates the pandas dataframe out of data
+# Format_save_copy.py 
+is for getting "all_state" data into pretty "save_copy", with necessasry columns and subscript.
 
-# To_HTML_CSV.py is for getting datatables into html files
+# LoadInElement.py 
+is what creates the pandas dataframe out of data
 
-# modsigfig.py is getting numbers into (##) format
+# To_HTML_CSV.py 
+is for getting datatables into html files
+
+# modsigfig.py 
+is getting numbers into (##) format
 
 # Process for creating the pages, TR, ME, All: 
 Load TransitionManualInput on Jupyter notebook (or download it as a script)
@@ -30,7 +36,7 @@ Transition rate HTML page is saved in format ""ElementsHTMLs\%sTranAuto.html" wh
 	This same process with format read-ins in repeated for the Transition rate "all" page, and matrix element page
 Other saved HTML's are "ElementsHTMLs\%sTranFull.html" and "ElementsHTMLs\%s.html" for "all" page and ME page respectively
 
-Process for creating the pages, Other:
+# Process for creating the pages, Other:
 Load OtherData on Jupyter notebook (or download it as a script)
 and run all cells.
 Enter name of the element, i.e Fr or CaII
